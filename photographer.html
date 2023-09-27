@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/png" href="assets/favicon.png">
+
+		<title>Fisheye - photographe </title>
+
+		<!-- Font Import-->
+		<link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+
+		<!-- CSS Import-->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/photographer.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/modal.css" rel="stylesheet" type="text/css" />
+
+		<!-- Javascript Import-->
+		<script defer src="assets/scripts/pages/photographer.js"></script>
+		<script defer src="assets/scripts/utils/modal.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<img src="assets/images/logo.png" class="logo" />
+		</header>
+
+		<main id="main">
+			<div class="photograph-header">
+				<button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+			</div>
+		</main>
+
+		<div id="contact_modal">
+			<div class="modal">
+				<header>
+					<h2>Contactez-moi</h2>
+					<img src="assets/icons/close.svg" onclick="closeModal()" />
+				</header>
+
+				<form>
+					<div>
+						<label>Prénom</label>
+						<input type="text" name="" id="">
+					</div>
+
+					<button class="contact_button">Envoyer</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
