@@ -26,8 +26,7 @@ FishEye a website that allows freelance photographers to showcase their best wor
     on which the user has clicked and pass it as a parameter to the
     parameter of the url displayed.
 
-        ● You can start by making a console.log of the data
-        corresponding to the photographer selected from the URL.
+        ● You can start by making a console.log of the data corresponding to the photographer selected from the URL.
         ● You'll then display the page content in the next step.
         ● Pay attention to the accessibility of your links (aria-label, manage focus, etc.).
 
