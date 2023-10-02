@@ -1,3 +1,10 @@
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .photographer_section {
 	margin-top: 100px;
 
@@ -26,4 +33,38 @@
 .photographer_section a:nth-child(3) img {
     margin-left: 20px;
     transform: scale(1.2);
+}
+
+@media screen and (max-width: 1052px) {
+	.photographer_section {
+		grid-template-columns: 1fr 1fr;
+		gap: 50px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.photographer_section {
+		grid-template-columns: 1fr; /* Superposition des éléments, accepte un seul élément par ligne */
+		gap: 50px;
+	}
+
+	.logo {
+		margin-left: unset;
+		
+		width: 120px;
+		height: 35px;
+	}
+
+	header {
+		margin-top: 30px;
+
+		flex-direction: column;
+		justify-content: unset;
+		align-items: center;
+	}
+
+	header h1 {
+		margin-right: unset;
+		font-size: 25px;
+	}
 }
