@@ -24,8 +24,8 @@ FishEye a website that allows freelance photographers to showcase their best wor
     - Here, you'll need to build a system to switch from the clicked link to page loading.
     To do this, you'll use the id of the photographer on which the user has clicked and pass it as a parameter to the parameter of the url displayed.
 
-        ● You can start by making a console.log of the data corresponding to the photographer selected from the URL.
-        ● You'll then display the page content in the next step.
+        ● You can start by making a console.log of the data corresponding to the photographer selected from the URL.<br/>
+        ● You'll then display the page content in the next step.<br/>
         ● Pay attention to the accessibility of your links (aria-label, manage focus, etc.).
 
 - Show static page content photographer (45%)
@@ -33,12 +33,9 @@ FishEye a website that allows freelance photographers to showcase their best wor
     you extended in step 3 to display your page content, as well as your
     as well as your fetch function.
 
-        ● You'll also be displaying the photographers' achievements, by
-        creating a factory for Media.
-        ● Don't forget the small insert showing the photographer's daily rate.
-        photographer displayed.
-        ● You'll take care of the number of likes, the LightBox and the
-        ContactForm in a later step.
+        ● You'll also be displaying the photographers' achievements, by creating a factory for Media.<br/>
+        ● Don't forget the small insert showing the photographer's daily rate, photographer displayed.<br/>
+        ● You'll take care of the number of likes, the LightBox and the ContactForm in a later step.
 
 - Create the contact modal (55%).
     - The modal base is already present in the codebase. You add form management and the missing style.
@@ -52,7 +49,7 @@ FishEye a website that allows freelance photographers to showcase their best wor
 - View and manage likes (80%)
     - In this step, you'll increment the likes on the photos photos, and list the likes of all the photographs for the bottom which represents all the likes of a photographer.
 
-        ● You can manage the total number of likes from your photographer Template.
+        ● You can manage the total number of likes from your photographer Template.<br/>
         ● Here, there's no need to save your likes: if you refresh the page, the likes don't need to be saved.
 
 - Create the sorting system (90%)

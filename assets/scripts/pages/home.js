@@ -1,26 +1,51 @@
-function photographerTemplate(data) {
-	const { name, portrait } = data;
+import { getPhotographers, createElement } from "./utils.js";
 
+function photographerTemplate(data) {
+	const { id, name, portrait, city, country, tagline, price } = data;
 	const picture = `assets/images/photographers/${portrait}`;
 
 	function getUserCardDOM() {
-		const article = document.createElement("article");
+		const link = createElement("a", { href: `/photographer.html?id=${id}` });
+		const divPicture = createElement("div", { class: "pfp" });
 
-		const divPicture = document.createElement("div");
-		const img = document.createElement("img");
+		// Ajoute l'image à la div
+		const pfp = createElement("img", { src: picture, alt: "picture of profile" });
+		divPicture.appendChild(pfp);
 
-		divPicture.className += "pfp";
-		img.setAttribute("src", picture);
-		divPicture.appendChild(img);
+		const nameTitle = createElement("h2", { class: "name" }, name);
+		const cityCountry = createElement("p", { class: "country" }, `${city}, ${country}`);
+		const desc = createElement("p", { class: "desc" }, tagline);
+		const dailyPrice = createElement("p", { class: "price" }, `${price.toString()}€/jour`);
 
-		const h2 = document.createElement("h2");
-		h2.textContent = name;
+		// Création de notre div global qui va contenir tout nos éléments
+		const article = createElement("article", {}, [divPicture, nameTitle, cityCountry, desc, dailyPrice]);
+		link.appendChild(article);
 
-		article.appendChild(divPicture);
-		article.appendChild(h2);
+		console.log(data);
 
-		return article;
+		// Retourne la structure DOM de la carte utilisateur
+		return link;
 	}
 
+	// Retourne les données du photographe et la fonction pour créer la structure DOM
 	return { name, picture, getUserCardDOM };
 }
+
+async function displayData(photographers) {
+	const photographersSection = document.querySelector(".photographer_section");
+
+	photographers.forEach((photographer) => {
+		const photographerModel = photographerTemplate(photographer);
+		const userCardDOM = photographerModel.getUserCardDOM();
+
+		photographersSection.appendChild(userCardDOM);
+	});
+}
+
+async function init() {
+	// Récupère les datas des photographes
+	const { photographers } = await getPhotographers();
+	displayData(photographers);
+}
+
+init();
