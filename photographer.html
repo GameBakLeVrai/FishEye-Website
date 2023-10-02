@@ -15,8 +15,7 @@
 		<link href="assets/css/modal.css" rel="stylesheet" type="text/css" />
 
 		<!-- Javascript Import-->
-		<script defer src="assets/scripts/pages/photographer.js"></script>
-		<script defer src="assets/scripts/utils/modal.js"></script>
+		<script type="module" defer src="assets/scripts/pages/photographer.js"></script>
 	</head>
 
 	<body>
@@ -26,16 +25,20 @@
 
 		<main id="main">
 			<div class="photograph-header">
-				<button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+				<button id="openModal" class="contact_button">Contactez-moi</button>
 			</div>
 		</main>
 
 		<div id="contact_modal">
 			<div class="modal">
-				<header>
-					<h2>Contactez-moi</h2>
-					<img src="assets/icons/close.svg" onclick="closeModal()" />
-				</header>
+				<div class="modal__text-container">
+					<div>
+						<h2>Contactez-moi</h2>
+						<h2 id="modal-name"></h2>
+					</div>
+
+					<img id="closeModal" src="assets/icons/close.svg" />
+				</div>
 
 				<form>
 					<div>

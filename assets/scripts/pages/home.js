@@ -5,7 +5,7 @@ function photographerTemplate(data) {
 	const picture = `assets/images/photographers/${portrait}`;
 
 	function getUserCardDOM() {
-		const link = createElement("a", { href: `/photographer.html?id=${id}` });
+		const link = createElement("a", { href: `/photographer.html?id=${id}`, "aria-label": "Page du photographe" });
 		const divPicture = createElement("div", { class: "pfp" });
 
 		// Ajoute l'image à la div

@@ -17,19 +17,22 @@
 	background-color: var(--secondary-color);
 }
 
-.modal header {
+.modal__text-container {
+	margin-bottom: 20px;
     width: 100%;
+	display: flex;
 	justify-content: space-between;
 }
 
-.modal header img {
+.modal__text-container img {
+	width: 42px;
 	cursor: pointer;
 }
 
-.modal header h2 {
+.modal__text-container h2 {
 	font-size: 64px;
 	font-weight: normal;
-	text-align: center;
+	text-align: left;
 }
 
 .modal form {
