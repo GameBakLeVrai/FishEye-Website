@@ -26,3 +26,26 @@ export const createElement = (type, attributes = {}, children = []) => {
 	// Retourne l'élément HTML créé
 	return element;
 };
+
+// Fonction qui va crée et retourner uniquement les HTMLElements utile concernant le photographe voulu
+export const getUserCardDOM = (data) => {
+	const { name, portrait, city, country, tagline, price } = data;
+	const picture = `assets/images/photographers/${portrait}`;
+
+	const divPicture = createElement("div", { class: "pfp" });
+	const pfp = createElement("img", { src: picture, alt: "picture of profile" });
+	divPicture.appendChild(pfp);
+
+	const nameTitle = createElement("h2", { class: "name" }, name);
+	const cityCountry = createElement("p", { class: "country" }, `${city}, ${country}`);
+	const desc = createElement("p", { class: "desc" }, tagline);
+	const dailyPrice = createElement("p", { class: "price" }, `${price.toString()}€/jour`);
+
+	return {
+		picture: divPicture,
+		name: nameTitle,
+		cityCountry: cityCountry,
+		description: desc,
+		price: dailyPrice
+	};
+}

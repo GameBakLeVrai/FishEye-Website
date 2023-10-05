@@ -1,5 +1,5 @@
 import { displayModal, closeModal } from "../utils/modal.js";
-import { getPhotographers } from "./utils.js";
+import { getPhotographers } from "../utils/index.js";
 
 // Vérification si l'url contient un id sinon on redirige vers la page principal
 const idPage = (window.location.href.includes("id") && window.location.href.split("id=")[1] !== "") ? parseInt(window.location.href.split("id=")[1]) : window.location.href = "/";
