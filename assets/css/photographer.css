@@ -1,8 +1,40 @@
 .photograph-header {
 	margin: 0 100px;
-	height: 300px;
+
+	min-height: 300px;
+	height: 100%;
 
 	background-color: var(--bg-color);	
+	border-radius: 5px;
+}
+
+.photograph-header {
+	padding: 50px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 50px;
+}
+
+.photograph-header__text {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.photograph-header__text .name {
+	font-size: 64px;
+}
+
+.photograph-header__text .country {
+	font-size: 24px;
+}
+
+.photograph-header__text .desc {
+	font-size: 18px;
+	color: var(--third-color);
 }
 
 .contact_button {
@@ -20,4 +52,26 @@
 	
 	border: none;
 	border-radius: 5px;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+	header {
+		justify-content: center;
+	}
+
+	.logo {
+		margin-left: unset;
+	}
+
+	.photograph-header {
+		margin: 0 20px;		
+		justify-content: center;
+	}
+
+	.photograph-header__text {
+		text-align: center;
+	}
 }

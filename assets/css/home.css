@@ -18,21 +18,6 @@ header {
 	gap: 5px;
 }
 
-.photographer_section article a img {
-    margin-top: 10px;
-
-	width: 100%;
-	height: 100%;
-
-    transform: scale(1.45);
-    object-fit: cover;
-}
-
-.photographer_section article:nth-child(3) a img {
-    margin-left: 20px;
-    transform: scale(1.2);
-}
-
 @media screen and (max-width: 1052px) {
 	.photographer_section {
 		grid-template-columns: 1fr 1fr;
