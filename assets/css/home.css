@@ -1,4 +1,4 @@
-header {	
+header {
 	justify-content: space-between;
 }
 
@@ -33,7 +33,7 @@ header {
 
 	.logo {
 		margin-left: unset;
-		
+
 		width: 120px;
 		height: 35px;
 	}
