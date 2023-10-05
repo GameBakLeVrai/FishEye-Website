@@ -32,8 +32,6 @@ export const getUserCardDOM = (data) => {
 	const { name, portrait, city, country, tagline, price } = data;
 	const picture = `assets/images/photographers/${portrait}`;
 
-	console.log(name)
-
 	const divPicture = createElement("div", { class: "pfp" });
 	const pfp = createElement("img", { class:  (name.includes("Tracy") ? "tracy" : ""), src: picture, alt: "picture of profile" });
 	divPicture.appendChild(pfp);

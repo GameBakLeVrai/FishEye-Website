@@ -55,6 +55,37 @@
 	border-radius: 5px;
 }
 
+/* Media Sort Container */
+
+.media-sort__container {
+	margin-top: 20px;
+	margin-left: 100px;
+}
+
+.media-sort__container label {
+	margin-right: 20px;
+
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.media-sort__container select,
+.media-sort__container option {
+	color: white;
+}
+
+.media-sort__container select {		
+	cursor: pointer;
+	padding: 10px 20px;
+
+	background: var(--primary-color);
+
+	font-size: 18px;
+	font-weight: 700;
+
+	border: none;
+	border-radius: 5px;
+}
 
 /* Responsive */
 
@@ -74,5 +105,11 @@
 
 	.photograph-header__text {
 		text-align: center;
+	}
+
+	/* Media Sort */
+
+	.media-sort__container {
+		margin-left: 20px;
 	}
 }
