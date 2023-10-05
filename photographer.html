@@ -15,12 +15,14 @@
 		<link href="assets/css/modal.css" rel="stylesheet" type="text/css" />
 
 		<!-- Javascript Import-->
-		<script type="module" defer src="assets/scripts/pages/photographer.js"></script>
+		<script type="module" async defer src="assets/scripts/pages/photographer.js"></script>
 	</head>
 
 	<body>
 		<header>
-			<img src="assets/images/logo.png" class="logo" />
+			<a href="/">
+				<img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+			</a>
 		</header>
 
 		<main id="main">
@@ -37,31 +39,31 @@
 						<h2 id="modal-name"></h2>
 					</div>
 
-					<img id="closeModal" src="assets/icons/close.svg" />
+					<img id="closeModal" src="assets/icons/close.svg" aria-label="Close Contact Form" />
 				</div>
 
 				<form>
 					<div>
 						<label for="name">Prénom</label>
-						<input type="text" name="name" id="name">
+						<input type="text" name="firstname" id="firstname" aria-label="First name">
 					</div>
 
 					<div>
 						<label for="surname">Nom</label>
-						<input type="text" name="surname" id="surname">
+						<input type="text" name="lastname" id="lastname" aria-label="Last name">
 					</div>
 
 					<div>
 						<label for="email">Email</label>
-						<input type="email" name="email" id="email">
+						<input type="email" name="email" id="email" aria-label="Email">
 					</div>
 
 					<div>
 						<label for="message">Votre message</label>
-						<textarea id="message" name="message" rows="4" cols="50"></textarea>
+						<textarea id="message" name="message" rows="6" cols="50" aria-label="Your message"></textarea>
 					</div>
 
-					<button class="contact_button">Envoyer</button>
+					<button class="contact_button" aria-label="Send">Envoyer</button>
 				</form>
 			</div>
 		</div>

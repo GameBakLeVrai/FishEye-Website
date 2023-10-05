@@ -1,17 +1,22 @@
 #contact_modal {
+	position: absolute;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+
 	display: none;
+
+	background: #C4C4C466;
 }
 
 .modal {
     padding: 35px;
-	margin: auto;
+	margin: 0 auto;
 
-    width: 50%;
-
-    display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	max-width: 669px;
+    width: 100%;
+	height: 900px;
 
 	border-radius: 5px;
 	background-color: var(--secondary-color);
@@ -19,9 +24,11 @@
 
 .modal__text-container {
 	margin-bottom: 20px;
-    width: 100%;
+	width: 100%;
+    
 	display: flex;
 	justify-content: space-between;
+	align-items: baseline;
 }
 
 .modal__text-container img {
@@ -36,11 +43,9 @@
 }
 
 .modal form {
-    width: 100%;
-
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	gap: 5px;
 }
 
 .modal form label {
@@ -48,13 +53,10 @@
     color: #312E2E;
 }
 
-.modal form div {
-    margin-bottom: 26px;
-	width: 100%;
-
-    display: flex;
-	flex-direction: column;	
-	align-items: self-start;
+.modal form textarea,
+.modal form input {
+	padding: 10px;
+	outline: none;
 }
 
 .modal form input {
@@ -63,4 +65,11 @@
 
 	border: none;
 	border-radius: 5px;
+}
+
+.modal form textarea {	
+	width: 100%;
+
+	border: none;
+	border-radius: 5px;	
 }

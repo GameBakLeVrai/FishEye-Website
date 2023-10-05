@@ -1,8 +1,5 @@
-header {
-	display: flex;
-	flex-direction: row;
+header {	
 	justify-content: space-between;
-	align-items: center;
 }
 
 .photographer_section {
@@ -13,14 +10,15 @@ header {
 	gap: 70px;
 }
 
-.photographer_section article {
+.photographer_section article,
+.photographer_section article a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 5px;
 }
 
-.photographer_section a img {
+.photographer_section article a img {
     margin-top: 10px;
 
 	width: 100%;
@@ -30,7 +28,7 @@ header {
     object-fit: cover;
 }
 
-.photographer_section a:nth-child(3) img {
+.photographer_section article:nth-child(3) a img {
     margin-left: 20px;
     transform: scale(1.2);
 }
