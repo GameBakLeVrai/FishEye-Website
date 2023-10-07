@@ -40,4 +40,35 @@ const headerGenerator = () => {
     headerContainer.appendChild(domElements.picture);
 }
 
+const mediaGenerator = async () => {
+    const { media } = await getPhotographers();
+    const photoGraphMedia = media.filter((m) => m.photographerId === idPage);
+
+    photoGraphMedia.map((m) => {
+        const mediaElement = `./assets/images/media/${infos.name}/${(m.image) ? m.image : m.video}`;
+        let pictureVideo = null;
+    
+        if(m.image) pictureVideo = createElement("img", { src: mediaElement, alt: `${m.title} image` });
+
+        if(m.video) {
+            const source = createElement("source", { src: mediaElement, type: "video/mp4" });
+            pictureVideo = createElement("video", { controls: "true" }, [source]);
+        }
+
+        const divMedia = createElement("div", { class: "media-element" }, [pictureVideo]);
+        
+        const title = createElement("p", { class: "title" }, m.title);
+        const stats = createElement("p", { class: "title likes" }, m.likes.toString());
+        const heart = createElement("img", { class:  "heart", src: "assets/icons/heart.svg", alt: `Heart` });
+
+        const divStats = createElement("div", { class: "media-stats__container" }, [stats, heart]);
+        const divTextContainer = createElement("div", { class: "media-text__container" }, [title, divStats]);        
+    
+        const finalMedia = createElement("div", { class: "media__container" }, [divMedia, divTextContainer]);
+        document.getElementsByClassName("media")[0].appendChild(finalMedia);
+    })
+}
+
+// Initialisation Functions
 headerGenerator();
+mediaGenerator();
