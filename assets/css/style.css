@@ -24,6 +24,15 @@
 	box-sizing: border-box;
 }
 
+body {
+	margin: 0 auto;
+
+	max-width: 1440px;
+	width: 100%;
+
+	box-sizing: border-box;
+}
+
 header {
 	display: flex;
 	align-items: center;
