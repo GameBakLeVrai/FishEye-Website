@@ -127,10 +127,11 @@
 }
 
 .media {
-	margin: 20px 0 20px 100px;
+	margin: 20px 100px;
 
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;	
+	grid-template-columns: repeat(auto-fit, 350px);
+	justify-content: space-between;
 	gap: 20px;
 }
 
@@ -186,6 +187,12 @@
 		margin-left: unset;
 	}
 
+	.photograph-stats {
+		bottom: -35px;
+		width: 100%;
+		right: unset;
+	}
+
 	.photograph-header {
 		margin: 0 20px;
 		justify-content: center;
@@ -199,5 +206,9 @@
 
 	.media-sort__container {
 		margin-left: 20px;
+	}
+
+	.media {
+		justify-content: center;
 	}
 }
