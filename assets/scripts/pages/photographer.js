@@ -40,9 +40,25 @@ const headerGenerator = () => {
     headerContainer.appendChild(domElements.picture);
 }
 
-const mediaGenerator = async () => {
+const mediaGenerator = async (option) => {
+    if(document.getElementsByClassName("media")[0].getElementsByClassName("media__container")[0])
+        [...document.getElementsByClassName("media__container")].forEach((element) => element.remove());
+
     const { media } = await getPhotographers();
     const photoGraphMedia = media.filter((m) => m.photographerId === idPage);
+
+    photoGraphMedia.sort((a, b) => {
+        switch(option) {
+            case "Titre":
+                return (a.title < b.title) ? -1 : 1;
+
+            case "Date":
+                return new Date(b.date) - new Date(a.date);
+
+            default:
+                return b.likes - a.likes;
+        }
+    });
 
     photoGraphMedia.map((m) => {
         const mediaElement = `./assets/images/media/${infos.name}/${(m.image) ? m.image : m.video}`;
@@ -75,6 +91,11 @@ const mediaGenerator = async () => {
 }
 
 const loadGlobalStats = () => {
+    if(document.getElementsByClassName("photograph-stats")[0].hasChildNodes()) {
+        document.getElementsByClassName("photograph-stats")[0].getElementsByClassName("media-stats__container")[0].remove();
+        document.getElementsByClassName("photograph-stats")[0].getElementsByClassName("price")[0].remove();
+    }
+
     const domElements = getUserCardDOM(infos);
 
 	const globalDivStats = document.getElementsByClassName("photograph-stats")[0];
@@ -120,4 +141,6 @@ const heartIsLiked = (e) => {
 // Initialisation Functions
 
 headerGenerator();
-mediaGenerator();
+mediaGenerator("Popularité");
+
+document.getElementById("media-sort").addEventListener("change", (e) => mediaGenerator(e.target.value));
