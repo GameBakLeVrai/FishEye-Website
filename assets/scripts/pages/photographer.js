@@ -146,3 +146,20 @@ mediaGenerator("Popularité");
 
 // Lorsque que l'utilisateur choisis de changer l'ordre de tri, execute la fonction mediaGenerator pour regénérer les medias en fonction de l'ordre choisis
 document.getElementById("media-sort").addEventListener("change", (e) => mediaGenerator(e.target.value));
+
+// Quand le formulaire de contact est envoyer
+document.getElementsByClassName("contact_button")[1].addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const firstname = document.getElementById("firstname").value;
+    const lastname = document.getElementById("lastname").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    console.log({
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        message: message
+    })
+});

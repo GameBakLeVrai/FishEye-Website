@@ -19,6 +19,11 @@
 	width: 100%;
 	height: 900px;
 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
 	border-radius: 5px;
 	background-color: var(--secondary-color);
 }
@@ -58,11 +63,12 @@
 .modal form input {
 	padding: 10px;
 	outline: none;
+	font-size: 23px;
 }
 
 .modal form input {
 	width: 100%;
-	height: 68px;
+	height: 65px;
 
 	border: none;
 	border-radius: 5px;
