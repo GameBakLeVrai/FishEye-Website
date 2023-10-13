@@ -74,3 +74,32 @@
 	border: none;
 	border-radius: 5px;
 }
+
+/* Responsive */
+
+
+@media screen and (max-width: 768px) {
+	.modal {
+		height: 100%;
+	}
+	
+	.modal__text-container h2 {
+		font-size: 32px;
+	}
+
+	.modal__text-container img {
+		width: 22px;
+	}
+
+	.modal form label {
+		font-size: 20px;
+	}
+
+	.modal form input {
+		height: 45px;
+	}
+
+	.contact_button {
+		margin-top: 20px;
+	}
+}

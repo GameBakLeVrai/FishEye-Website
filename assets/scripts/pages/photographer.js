@@ -91,6 +91,7 @@ const mediaGenerator = async (option) => {
 }
 
 const loadGlobalStats = () => {
+    // Vérifie si la division contenant nos statistiques contient des éléments, si oui, il supprime tout pour pas qu'il y ai de bug au niveau des likes
     if(document.getElementsByClassName("photograph-stats")[0].hasChildNodes()) {
         document.getElementsByClassName("photograph-stats")[0].getElementsByClassName("media-stats__container")[0].remove();
         document.getElementsByClassName("photograph-stats")[0].getElementsByClassName("price")[0].remove();
@@ -143,4 +144,5 @@ const heartIsLiked = (e) => {
 headerGenerator();
 mediaGenerator("Popularité");
 
+// Lorsque que l'utilisateur choisis de changer l'ordre de tri, execute la fonction mediaGenerator pour regénérer les medias en fonction de l'ordre choisis
 document.getElementById("media-sort").addEventListener("change", (e) => mediaGenerator(e.target.value));
