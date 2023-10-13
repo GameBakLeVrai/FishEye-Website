@@ -61,6 +61,9 @@ const mediaGenerator = async () => {
         const stats = createElement("p", { class: "title likes" }, m.likes.toString());
         const heart = createElement("i", { class: "fa-regular fa-heart" });
 
+        // Déclenche la fonction heartIsLiked à chaque fois qu'on clique sur le coeur
+        heart.addEventListener("click", (e) => heartIsLiked(e));
+
         const divStats = createElement("div", { class: "media-stats__container" }, [stats, heart]);
         const divTextContainer = createElement("div", { class: "media-text__container" }, [title, divStats]);        
     
@@ -75,7 +78,7 @@ const loadGlobalStats = () => {
     const domElements = getUserCardDOM(infos);
 
 	const globalDivStats = document.getElementsByClassName("photograph-stats")[0];
-	const divStats = document.getElementsByClassName("media-stats__container");    
+	const divStats = document.getElementsByClassName("media-stats__container");
 
     // Défini stats à 0 et ajoute le nombre de coeur que chaque media possède à stats afin d'obtenir le nombre total de coeur
     let stats = 0;
@@ -89,6 +92,30 @@ const loadGlobalStats = () => {
     globalDivStats.appendChild(divStatsFinal);
     globalDivStats.appendChild(domElements.price);
 };
+
+const heartIsLiked = (e) => {
+    let likes = parseInt(e.target.parentNode.querySelector("p").textContent);
+
+    const addRemoveLike = (option) => {
+        const p = e.target.parentNode.querySelector("p");
+        const globalHearts = document.getElementsByClassName("media-stats__container")[0].querySelector("p");
+
+        p.innerText = (option === "add") ? likes + 1 : likes - 1;
+        globalHearts.innerText = (option === "add") ? parseInt(globalHearts.textContent) + 1 : parseInt(globalHearts.textContent) - 1;
+    }
+    
+    if(e.target.classList.toString().includes("fa-regular")) {
+        e.target.classList.remove("fa-regular");
+        e.target.classList.add("fa-solid");
+
+        addRemoveLike("add");
+    } else {
+        e.target.classList.remove("fa-solid");
+        e.target.classList.add("fa-regular");
+
+        addRemoveLike("remove");
+    }
+}
 
 // Initialisation Functions
 
