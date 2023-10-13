@@ -101,3 +101,9 @@ a {
 	font-size: 9px;
 	color: #757575;
 }
+
+.fa-heart {
+	cursor: pointer;
+	font-size: 22px;
+	color: var(--primary-color);
+}

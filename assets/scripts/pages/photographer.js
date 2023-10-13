@@ -59,7 +59,7 @@ const mediaGenerator = async () => {
         
         const title = createElement("p", { class: "title" }, m.title);
         const stats = createElement("p", { class: "title likes" }, m.likes.toString());
-        const heart = createElement("img", { class:  "heart", src: "assets/icons/heart.svg", alt: `Heart` });
+        const heart = createElement("i", { class: "fa-regular fa-heart" });
 
         const divStats = createElement("div", { class: "media-stats__container" }, [stats, heart]);
         const divTextContainer = createElement("div", { class: "media-text__container" }, [title, divStats]);        
@@ -67,8 +67,30 @@ const mediaGenerator = async () => {
         const finalMedia = createElement("div", { class: "media__container" }, [divMedia, divTextContainer]);
         document.getElementsByClassName("media")[0].appendChild(finalMedia);
     })
+
+    loadGlobalStats();
 }
 
+const loadGlobalStats = () => {
+    const domElements = getUserCardDOM(infos);
+
+	const globalDivStats = document.getElementsByClassName("photograph-stats")[0];
+	const divStats = document.getElementsByClassName("media-stats__container");    
+
+    // Défini stats à 0 et ajoute le nombre de coeur que chaque media possède à stats afin d'obtenir le nombre total de coeur
+    let stats = 0;
+    [...divStats].forEach(s => stats += parseInt(s.textContent));
+
+    const likes = createElement("p", { class: "title likes" }, stats.toString());
+    const heart = createElement("i", { class: "fa-solid fa-heart" });
+
+    const divStatsFinal = createElement("div", { class: "media-stats__container" }, [likes, heart]);
+
+    globalDivStats.appendChild(divStatsFinal);
+    globalDivStats.appendChild(domElements.price);
+};
+
 // Initialisation Functions
+
 headerGenerator();
 mediaGenerator();
