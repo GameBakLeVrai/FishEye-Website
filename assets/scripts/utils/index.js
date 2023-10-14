@@ -49,3 +49,28 @@ export const getUserCardDOM = (data) => {
 		price: dailyPrice
 	};
 }
+
+export const getMediaIndex = (child, mediaList) => {
+	const typeMedia = (child.tagName === "VIDEO") ? "video" : "image";
+	var index = 0;	
+
+	for(let i = 0; i < mediaList.length; i++) {
+		const childs = mediaList[i].getElementsByClassName("media-element")[0].childNodes;
+
+		switch(typeMedia) {
+			case "video":
+				const source = (childs[0].childNodes)[0];
+
+				if(source) {
+					if(source.isEqualNode((child.childNodes)[0])) return index = i;
+				}
+
+				break;
+
+			default:
+				if(childs[0].isEqualNode(child)) return index = i;
+		}
+	}
+
+	return index;
+}

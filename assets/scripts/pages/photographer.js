@@ -19,11 +19,10 @@ if(!infos) window.location.href = "/";
 const openModalElement = document.getElementById("openModal");
 const closeModalElement = document.querySelectorAll(".closeModal");
 
-
 // Définition du message d'accessibilité pour le bouton d'ouverture de modal
 openModalElement.setAttribute("aria-label", `Contact me ${infos.name}`);
 
-openModalElement.addEventListener("click", async (e) => displayModal("contact", infos.name));
+openModalElement.addEventListener("click", async () => displayModal("contact", infos.name));
 closeModalElement.forEach((btn) => btn.addEventListener("click", (e) => closeModal(e)));
 
 
