@@ -43,7 +43,9 @@ export const lightboxNavigator = (child, div) => {
 		const mediaText = media.closest(".media__container").querySelector("p").textContent;
 
 		const title = document.getElementsByClassName("lightbox")[0].querySelector("p");
+		
 		const clone = media.cloneNode(true);
+		if(clone instanceof HTMLVideoElement) clone.setAttribute("controls", "true");
 		
 		if(option === "next") {
 			index += 1;
@@ -55,7 +57,7 @@ export const lightboxNavigator = (child, div) => {
 		if(option === "previous") {
 			index -= 1;
 			title.innerText = mediaText;
-			
+
 			return div.replaceChildren(clone);
 		}
 	}
