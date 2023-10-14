@@ -17,13 +17,14 @@ if(!infos) window.location.href = "/";
 // Modal
 
 const openModalElement = document.getElementById("openModal");
-const closeModalElement = document.getElementById("closeModal");
+const closeModalElement = document.querySelectorAll(".closeModal");
+
 
 // Définition du message d'accessibilité pour le bouton d'ouverture de modal
 openModalElement.setAttribute("aria-label", `Contact me ${infos.name}`);
 
-openModalElement.addEventListener("click", async () => displayModal(infos.name));
-closeModalElement.addEventListener("click", closeModal);
+openModalElement.addEventListener("click", async (e) => displayModal("contact", infos.name));
+closeModalElement.forEach((btn) => btn.addEventListener("click", (e) => closeModal(e)));
 
 
 // Generate elements
@@ -68,14 +69,15 @@ const mediaGenerator = async (option) => {
 
         if(m.video) {
             const source = createElement("source", { src: mediaElement, type: "video/mp4" });
-            pictureVideo = createElement("video", { controls: "true" }, [source]);
+            pictureVideo = createElement("video", {}, [source]);
         }
 
         const divMedia = createElement("div", { class: "media-element" }, [pictureVideo]);
+        divMedia.addEventListener("click", () => displayModal("lightbox", m.title, pictureVideo));
         
         const title = createElement("p", { class: "title" }, m.title);
         const stats = createElement("p", { class: "title likes" }, m.likes.toString());
-        const heart = createElement("i", { class: "fa-regular fa-heart" });
+        const heart = createElement("i", { class: "fa-regular fa-heart", "aria-label": "likes" });
 
         // Déclenche la fonction heartIsLiked à chaque fois qu'on clique sur le coeur
         heart.addEventListener("click", (e) => heartIsLiked(e));
@@ -107,7 +109,7 @@ const loadGlobalStats = () => {
     [...divStats].forEach(s => stats += parseInt(s.textContent));
 
     const likes = createElement("p", { class: "title likes" }, stats.toString());
-    const heart = createElement("i", { class: "fa-solid fa-heart" });
+    const heart = createElement("i", { class: "fa-solid fa-heart", "aria-label": "likes" });
 
     const divStatsFinal = createElement("div", { class: "media-stats__container" }, [likes, heart]);
 

@@ -30,7 +30,7 @@
 			<div class="photograph-stats"></div>
 			
 			<div class="photograph-header">
-				<button id="openModal" class="contact_button">Contactez-moi</button>
+				<button id="openModal" class="contact_button" aria-label="Contact Me">Contactez-moi</button>
 			</div>
 
 			<div class="media-sort__container">
@@ -46,15 +46,15 @@
 			<div class="media"></div>
 		</main>
 
-		<div id="contact_modal">
+		<div class="modal__container">
 			<div class="modal">
 				<div class="modal__text-container">
 					<div>
 						<h2>Contactez-moi</h2>
-						<h2 id="modal-name"></h2>
+						<h2 class="modal-name"></h2>
 					</div>
-
-					<img id="closeModal" src="assets/icons/close.svg" aria-label="Close Contact Form" />
+					
+					<i class="fa-solid fa-xmark closeModal" aria-label="Close Contact Form"></i>
 				</div>
 
 				<form>
@@ -80,6 +80,20 @@
 
 					<button class="contact_button" aria-label="Send">Envoyer</button>
 				</form>
+			</div>
+		</div>
+
+		<div class="modal__container">
+			<div class="modal lightbox">
+				<i class="fa-solid fa-xmark closeModal" aria-label="Close Contact Form"></i>
+
+				<div class="media-content">
+					<i class="fa-solid fa-angle-left"></i>
+					<div class="media-element"></div>
+					<i class="fa-solid fa-angle-right"></i>					
+				</div>
+
+				<p class="modal-name title"></p>
 			</div>
 		</div>
 	</body>
