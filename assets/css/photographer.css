@@ -27,7 +27,7 @@ body {
 }
 
 .photograph-stats .media-stats__container p,
-.photograph-stats .media-stats__container i,
+.photograph-stats .media-stats__container em,
 .photograph-stats .price {
 	cursor: initial;
 	color: black;

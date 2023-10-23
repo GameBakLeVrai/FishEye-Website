@@ -37,7 +37,7 @@
 	align-items: baseline;
 }
 
-.modal i {
+.modal em {
 	font-size: 42px;
 	color: white;
 	cursor: pointer;
@@ -91,7 +91,7 @@
 	background-color: white;
 }
 
-.lightbox i {
+.lightbox em {
 	color: var(--primary-color) !important;
 }
 

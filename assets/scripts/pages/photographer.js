@@ -76,7 +76,7 @@ const mediaGenerator = async (option) => {
         
         const title = createElement("p", { class: "title" }, m.title);
         const stats = createElement("p", { class: "title likes" }, m.likes.toString());
-        const heart = createElement("i", { class: "fa-regular fa-heart", "aria-label": "likes" });
+        const heart = createElement("em", { class: "fa-regular fa-heart", "aria-label": "likes" });
 
         // Déclenche la fonction heartIsLiked à chaque fois qu'on clique sur le coeur
         heart.addEventListener("click", (e) => heartIsLiked(e));
@@ -108,7 +108,7 @@ const loadGlobalStats = () => {
     [...divStats].forEach(s => stats += parseInt(s.textContent));
 
     const likes = createElement("p", { class: "title likes" }, stats.toString());
-    const heart = createElement("i", { class: "fa-solid fa-heart", "aria-label": "likes" });
+    const heart = createElement("em", { class: "fa-solid fa-heart", "aria-label": "likes" });
 
     const divStatsFinal = createElement("div", { class: "media-stats__container" }, [likes, heart]);
 
