@@ -164,3 +164,14 @@ document.getElementsByClassName("contact_button")[1].addEventListener("click", (
         message: message
     })
 });
+
+document.addEventListener("keydown", (e) => {
+    switch(e.key) {
+        case "Enter":
+            if(e.target.classList.toString().includes("closeModal")) closeModal(e);
+            if(document.activeElement.classList[0] === "media-element") document.activeElement.click();                
+            break;
+
+        default: return;
+    }
+});
