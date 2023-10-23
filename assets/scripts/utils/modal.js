@@ -64,4 +64,21 @@ export const lightboxNavigator = (child, div) => {
 
 	nextLightbox.addEventListener("click", () => nextPrevious("next"));
 	previousLightbox.addEventListener("click", () => nextPrevious("previous"));
+
+	// Change lightbox media with arrow of keyboard
+	document.addEventListener("keydown", (e) => {
+		if(document.querySelectorAll(".modal__container")[1].style.display !== "block") return;
+
+		switch(e.key) {
+			case "ArrowRight":
+				nextPrevious("next");
+				break;
+
+			case "ArrowLeft":
+				nextPrevious("previous");
+				break;
+				
+			default: return;
+		}
+	});
 }

@@ -71,7 +71,7 @@ const mediaGenerator = async (option) => {
             pictureVideo = createElement("video", {}, [source]);
         }
 
-        const divMedia = createElement("div", { class: "media-element" }, [pictureVideo]);
+        const divMedia = createElement("div", { class: "media-element", tabindex: "0" }, [pictureVideo]);
         divMedia.addEventListener("click", () => displayModal("lightbox", m.title, pictureVideo));
         
         const title = createElement("p", { class: "title" }, m.title);
