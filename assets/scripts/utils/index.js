@@ -74,3 +74,17 @@ export const getMediaIndex = (child, mediaList) => {
 
 	return index;
 }
+
+export const toggleTabIndex = (state) => {
+	const logo = document.querySelector(".logo");
+	const media = document.querySelectorAll(".media-element");
+	const openModal = document.getElementById("openModal");
+	const sortMenu = document.getElementById("media-sort");
+	const video = document.querySelector("video");
+
+	openModal.tabIndex = (state === "open") ? "-1" : "0";
+	logo.parentElement.tabIndex = (state === "open") ? "-1" : "0";
+	video.tabIndex = (state === "open") ? "-1" : "0";
+	sortMenu.tabIndex = (state === "open") ? "-1" : "0";
+	media.forEach((m) => m.tabIndex = (state === "open") ? "-1" : "0");
+}

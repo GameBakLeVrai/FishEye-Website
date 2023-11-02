@@ -1,4 +1,4 @@
-import { getMediaIndex } from "./index.js";
+import { getMediaIndex, toggleTabIndex } from "./index.js";
 
 export const displayModal = async (type, name, media) => {
 	const modal = document.getElementsByClassName("modal__container")[(type === "contact") ? 0 : 1];
@@ -6,6 +6,8 @@ export const displayModal = async (type, name, media) => {
 	
 	scrollTo(0, 0);
 	document.body.style.overflow = "hidden";
+
+	toggleTabIndex("open");
 
 	if(media) {
 		const div = document.getElementsByClassName("media-content")[0].getElementsByClassName("media-element")[0];
@@ -25,6 +27,8 @@ export const closeModal = (e) => {
 
 	modal.style.display = "none";
 	document.body.style.overflow = "unset";
+
+	toggleTabIndex("close");
 }
 
 export const lightboxNavigator = (child, div) => {
